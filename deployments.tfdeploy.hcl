@@ -22,3 +22,13 @@ deployment "production" {
     default_tags   = { stacks-preview-example = "lambda-component-expansion-stack" }
   }
 }
+
+deployment "testing" {
+  inputs = {
+    regions        = ["us-east-1", "us-west-1"]
+    role_arn       = "arn:aws:iam::050752650406:role/stacks-Me-Man-Me-Learn-Terraform-Stack-Deployments"
+    identity_token = identity_token.aws.jwt
+    default_tags   = { stacks-preview-example = "lambda-component-expansion-stack" }
+  }
+}
+
